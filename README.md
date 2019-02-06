@@ -2,8 +2,8 @@
 
 ## Installation
 
-1. Download and install [Anaconda] (https://docs.anaconda.com/anaconda/install/)
-2. Download the whole repository
+1. Download and install [Anaconda](https://docs.anaconda.com/anaconda/install/).
+2. Download the whole repository.
 3. In your terminal, in the root folder of the repository (i.e. the folder that contains the file `manage.py`), run:
     
     ```
