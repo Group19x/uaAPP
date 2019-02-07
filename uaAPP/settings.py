@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'home.apps.HomeConfig',
     'crispy_forms',
+    'django.contrib.admindocs',
 ]
 
 MIDDLEWARE = [
