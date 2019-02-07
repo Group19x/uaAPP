@@ -3,6 +3,13 @@ from django.contrib import messages
 from .forms import UserRegisterForm
 
 def register(request):
+    """
+    Processes data from the UserRegisterForm i.e. the form in the Registration page.
+
+    **Template:**
+
+    :template:`users/register.html`
+    """
     if request.method == 'POST':
         print("POST")
         form = UserRegisterForm(request.POST)
