@@ -1,0 +1,9 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+	{% for item in sched %}			
+		<h1>{{item.teamOne}} vs. {{item.teamTwo}}</h1>
+		<p>Venue: {{item.venue}} </p>
+		<p>Date and Time: {{item.date}} {{item.time}}</p>
+	{% endfor %}
+{% endblock content %}
