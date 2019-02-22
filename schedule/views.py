@@ -7,7 +7,7 @@ Passes to schedule/sched.html the table Schedule on models.py
 '''
 
 def Posts(request):
-	context = {
-		'sched' : Schedule.objects.all()
-	}
-	return render(request, 'schedule/sched.html', context) 
+    context = {
+        'sched' : Schedule.objects.all()
+    }
+    return render(request, 'schedule/sched.html', context) 

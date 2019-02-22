@@ -13,11 +13,11 @@ DLSU vs. FEU
 '''
 
 class Schedule(models.Model):
-	teamOne = models.CharField(max_length = 100)
-	teamTwo = models.CharField(max_length = 100)
-	venue = models.CharField(max_length = 100)
-	date = models.CharField(max_length = 100)
-	time = models.CharField(max_length = 100)
+    teamOne = models.CharField(max_length = 100)
+    teamTwo = models.CharField(max_length = 100)
+    venue = models.CharField(max_length = 100)
+    date = models.CharField(max_length = 100)
+    time = models.CharField(max_length = 100)
 
-	def __str__(self):
-		return self.teamOne + self.teamTwo
+    def __str__(self):
+        return self.teamOne + self.teamTwo

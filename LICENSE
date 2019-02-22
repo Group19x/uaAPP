@@ -29,20 +29,36 @@ of the Philippines, Diliman for the AY 2015-
 2016
 
 VERSION
-    1.0
+    1.0 
+        Programmer: John Ryan Ramos
+        Date: 1/31/2019
         CHANGELOG:
             Pages:
                 Login
                 Register
                 Logout
     2.0
+        Programmer: James Fuertes
+        Date: 2/18/2019
         CHANGELOG:
             Pages:
                 Schedule
             Models:
                 Schedule
                 Articles
+
+    2.1
+        Programmer: John Ryan Ramos
+        Date: 2/20/2019
+        CHANGELOG:
+            Models:
                 Registered_User
             Misc:
                 Username visible when log-in'd
                 Admin/Team status visible when log-in'd
+
+Creation date: 1/31/2019
+Client Group: UAAP and fanbase
+Purpose:
+    To document and collate information about the latest news and events occurring in the University Athletic Association of the Philippines (UAAP) such as facts and figures of the participating schools, games, leaderboard, and other useful information in assistance primarily to the students and athletes of the universities.
+
