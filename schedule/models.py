@@ -20,4 +20,4 @@ class Schedule(models.Model):
     time = models.CharField(max_length = 100)
 
     def __str__(self):
-        return self.teamOne + self.teamTwo
+        return self.teamOne + "-" + self.teamTwo
