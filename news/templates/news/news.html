@@ -1,0 +1,15 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+    <h1> NEWS </h1>	
+	{% for article in news %}		
+        
+        <!--<img src="{{ article.image.url }}" alt="img">-->
+		<h1> {{article.title}} </h1>
+        <p> </p>
+        <h3> by: {{article.author}} </h3>
+        <p> </p>
+        <div> <p> {{article.body}} </p> </div> 
+		<p>Date and Time: {{article.date_and_time}} </p>
+	{% endfor %}
+{% endblock content %}

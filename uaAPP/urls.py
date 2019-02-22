@@ -26,4 +26,5 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name = "logout"),          #Logout page including logic via the auth_views.LogoutView
     path('', include('home.urls')),
     path('schedule/', include('schedule.urls')),
+    path('news/', include('news.urls')),
 ]
