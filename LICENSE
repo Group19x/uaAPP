@@ -27,3 +27,22 @@ Solamo of the Department of Computer
 Science, College of Engineering, University
 of the Philippines, Diliman for the AY 2015-
 2016
+
+VERSION
+    1.0
+        CHANGELOG:
+            Pages:
+                Login
+                Register
+                Logout
+    2.0
+        CHANGELOG:
+            Pages:
+                Schedule
+            Models:
+                Schedule
+                Articles
+                Registered_User
+            Misc:
+                Username visible when log-in'd
+                Admin/Team status visible when log-in'd
