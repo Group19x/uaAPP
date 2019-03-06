@@ -7,7 +7,7 @@ class UserRegisterForm(UserCreationForm):
     Registration form that extends from the built-in UserCreationForm
 
     """
-    email = forms.EmailField()
+    email = forms.Field()
 
     class Meta:
         model = User
