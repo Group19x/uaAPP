@@ -3,12 +3,10 @@ from django.http import HttpResponse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Schedule
-
 '''
 Passes to schedule/sched.html the table Schedule on models.py
-
-
 '''
+
 
 def SchedPost(request):
     context = {
@@ -25,7 +23,7 @@ class SchedPostListView(ListView):
 class SchedPostDetailView(DetailView):
 	model = Schedule
 
-class SchedPostCreateView(LoginRequiredMixin, CreateView):
+class SchedPostCreateView(CreateView):
 	model = Schedule	
 	fields = ['teamOne', 'teamTwo', 'venue', 'date', 'time']
 

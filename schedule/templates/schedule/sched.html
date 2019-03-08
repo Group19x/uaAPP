@@ -1,6 +1,7 @@
 {% extends "home/base.html" %}
 
 {% block content %}
+	<a class = "btn btn-outline-secondary" href="{% url 'post-create' %}"> Create Schedule </a>
 	{% for item in sched %}
 		<article class="media content-section">
 			<div class="media-body">	
