@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'schedule.apps.ScheduleConfig',
     'news.apps.NewsConfig',
+    'news_create.apps.NewsCreateConfig'
 ]
 
 MIDDLEWARE = [
@@ -113,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Brunei'
 
 USE_I18N = True
 
@@ -130,3 +131,6 @@ STATIC_URL = '/static/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'home-main'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
