@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 '''
 Schedule Database
 
@@ -21,3 +21,6 @@ class Schedule(models.Model):
 
     def __str__(self):
         return self.teamOne + "-" + self.teamTwo
+
+    def get_absolute_url(self):
+    	return reverse('post-detail', kwargs={'pk': self.pk})

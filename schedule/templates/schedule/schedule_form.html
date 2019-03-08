@@ -1,0 +1,20 @@
+{% extends 'home/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} Register {% endblock %}
+
+{% block content %}
+    <div class = "container">
+        <form method = "POST">
+            {% csrf_token %}
+            <fieldsets class = "form-group">
+                <legend class = "border-bottom mb-4"> Schedule Post</legend>
+                {{ form|crispy }}
+                <div class = "form-group">
+                    <button class = "btn btn-outline-info" type="submit"> Post </button>
+                    <button class = "btn btn-outline-info" href="{% url 'post-detail' object.id %}"> Back </button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}
