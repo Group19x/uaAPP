@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Schedule
+from .forms import SchedCreateForm
+
 '''
 Passes to schedule/sched.html the table Schedule on models.py
 '''
@@ -23,9 +26,17 @@ class SchedPostListView(ListView):
 class SchedPostDetailView(DetailView):
 	model = Schedule
 
-class SchedPostCreateView(CreateView):
-	model = Schedule	
-	fields = ['teamOne', 'teamTwo', 'venue', 'date', 'time']
+def SchedPostCreateView(request):
+	if request.method == 'POST':
+	    form = SchedCreateForm(request.POST, request.FILES)
+	    if form.is_valid():
+	        form.save()
+	        #form.save()
+	        return HttpResponseRedirect('/')
+	else:
+	    form = SchedCreateForm()
+	return render(request, 'news_create/news_create.html', {'form':form})
+
 
 class SchedPostUpdateView(LoginRequiredMixin, UpdateView):
 	model = Schedule	
