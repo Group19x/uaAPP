@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Article
+from django.views.generic import ListView
 
 '''
 Passes to news/news.html the table Article
@@ -19,4 +20,10 @@ def Something(request):
                 print(id)
                 Article.objects.get(id=id).delete()
 
-    return render(request, 'news/news.html', context) 
+    return render(request, 'news/news.html', context)
+
+class ArticleListView(ListView):
+    model = Article
+    template_name = 'news/news.html'
+    context_object_name = 'news'
+    ordering = ['-date_and_time']
