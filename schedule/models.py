@@ -13,6 +13,7 @@ DLSU vs. FEU
 '''
 
 class Schedule(models.Model):
+    id = models.AutoField(primary_key=True)
     teamOne = models.CharField(max_length = 100)
     teamTwo = models.CharField(max_length = 100)
     venue = models.CharField(max_length = 100)
