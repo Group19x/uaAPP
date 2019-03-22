@@ -30,6 +30,7 @@ urlpatterns = [
     path('schedule/', include('schedule.urls')),
     path('news/', include('news.urls')),
     path('news_create/', include('news_create.urls')),
+    path('leaderboard/', include('leaderboard.urls')),
 ]
 
 if settings.DEBUG:

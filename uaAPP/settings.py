@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'schedule.apps.ScheduleConfig',
     'news.apps.NewsConfig',
-    'news_create.apps.NewsCreateConfig'
+    'news_create.apps.NewsCreateConfig',
+    'leaderboard.apps.LeaderboardConfig',
 ]
 
 MIDDLEWARE = [

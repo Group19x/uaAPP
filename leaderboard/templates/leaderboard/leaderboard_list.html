@@ -1,0 +1,21 @@
+{% extends "home/base.html" %}
+
+
+{% block content %}
+<h1>Women's Volleyball Leaderboard</h1>
+	<a class = "btn btn-outline-secondary" href="{% url 'leaderboard-create' %}"> Create Leaderboard Item</a>
+	{% for item in leaderboard %}
+		<article class="media content-section">
+			<div class="media-body">
+				<a class="btn btn-secondary btn-sm mt-1 bm-1" href="{% url 'leaderboard-update' item.id %}"> Update </a>
+				<a class="btn btn-danger btn-sm mt-1 bm-1" href="{% url 'leaderboard-delete' item.id %}"> Delete </a>	
+				<p>Team: {{item.team}} </p>
+				<p>Win: {{item.win}}</p>
+				<p>Lose: {{item.lose}}</p>
+				<p>Rank: {{item.rank}}</p>
+			</div>
+		</article>
+	{% endfor %}
+{% endblock content %}
+
+
