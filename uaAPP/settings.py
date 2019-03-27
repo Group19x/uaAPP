@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'news.apps.NewsConfig',
     'news_create.apps.NewsCreateConfig',
     'leaderboard.apps.LeaderboardConfig',
+    'team_profiles.apps.TeamProfilesConfig',
 ]
 
 MIDDLEWARE = [

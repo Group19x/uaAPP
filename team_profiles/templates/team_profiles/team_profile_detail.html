@@ -1,0 +1,7 @@
+{% extends "home/base.html" %}
+
+{% block content %}	
+	<h1>{{object.teamName}}</h1>
+	<a class="btn btn-secondary btn-sm mt-1 bm-1" href="{% url 'team-update' object.id %}"> Update </a>
+	<a class="btn btn-danger btn-sm mt-1 bm-1" href="{% url 'team-delete' object.id %}"> Delete </a>
+{% endblock content %}
