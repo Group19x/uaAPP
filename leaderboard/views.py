@@ -13,6 +13,7 @@ class LeaderboardListView(ListView):
     context_object_name = 'leaderboard'
 
     template_name = 'leaderboard/leaderboard_list.html'
+    ordering = ['rank']
 
 class LeaderboardCreateView(CreateView):
     model = Leaderboard    
