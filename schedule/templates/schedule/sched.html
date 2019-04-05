@@ -7,7 +7,7 @@
 			<div class="media-body">	
 				<h1><a class="article-title" href="{% url 'post-detail' item.id %}">{{item.teamOne}} vs. {{item.teamTwo}}</a></h1>
 				<p>Venue: {{item.venue}} </p>
-				<p>Date and Time: {{item.date}} {{item.time}}</p>
+				<p>Date and Time: {{item.date_and_time}}</p>
 			</div>
 		</article>
 	{% endfor %}
