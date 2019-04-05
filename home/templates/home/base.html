@@ -23,16 +23,16 @@
           <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
-            <div class="navbar-nav mr-auto">
+            <div class="navbar-nav">
               <a class="nav-item nav-link" href="{% url 'home-main' %}">Home</a>
             </div>
-            <div class="navbar-nav mr-auto">
+            <div class="navbar-nav">
               <a class="nav-item nav-link" href="{% url 'sched' %}">Schedule</a>
             </div>
-            <div class="navbar-nav mr-auto">
+            <div class="navbar-nav">
               <a class="nav-item nav-link" href="{% url 'news' %}">News</a>
             </div>
-            <div class="navbar-nav mr-auto">
+            <div class="navbar-nav">
               <a class="nav-item nav-link" href="{% url 'leaderboard' %}">Leaderboard</a>
             </div>
             <div class="navbar-nav mr-auto">
@@ -42,11 +42,6 @@
             <div class="navbar-nav">
               {% if user.is_authenticated %}
                 <a class="nav-item nav-link" href="#"> Welcome, {{ username }}! </a>
-                {% if type == 'admin'%}
-                    <a class="nav-item nav-link" href="#"> You are an {{ type }}! </a>
-                {% else %}
-                    <a class="nav-item nav-link" href="#"> You are a {{ type }} ! </a>
-                {% endif %}
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
               {% else %}
                 <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>

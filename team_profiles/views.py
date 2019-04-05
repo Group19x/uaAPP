@@ -12,6 +12,7 @@ class TeamListView(ListView):
 
 class TeamDetailView(DetailView):
 	model = Team_Profile
+	context_object_name = 'teams'
 
 class TeamCreateView(CreateView):
 	model = Team_Profile
@@ -23,6 +24,13 @@ class TeamUpdateView(UpdateView):
 
 class TeamDeleteView(DeleteView):
 	model = Team_Profile
-	success_url = '/teams'
-#class PlayerProfileView(DetailView):
-#	model = Player_Profile
+	success_url = '/team_profiles'
+
+class PlayerCreateView(CreateView):
+	model = Player_Profile
+	fields = ['teamID', 'player_name', 'sports', 'year_level', 'position']
+	success_url = '/team_profiles'
+
+class PlayerDeleteView(DeleteView):
+	model = Player_Profile
+	success_url = '/team_profiles'

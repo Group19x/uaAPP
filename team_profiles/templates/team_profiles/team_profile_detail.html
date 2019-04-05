@@ -2,6 +2,24 @@
 
 {% block content %}	
 	<h1>{{object.teamName}}</h1>
-	<a class="btn btn-secondary btn-sm mt-1 bm-1" href="{% url 'team-update' object.id %}"> Update </a>
-	<a class="btn btn-danger btn-sm mt-1 bm-1" href="{% url 'team-delete' object.id %}"> Delete </a>
+	<table style = "width: 100%">
+		<tr>
+			<th> Player </th>
+			<th> Sports </th>
+			<th> Year Level </th>
+			<th> Position </th>
+		</tr>
+		{% for player in teams.player_profile_set.all %}
+	  		<tr>
+	  			<th>{{player.player_name}}</th>
+	  			<th>{{player.sports}}</th>
+	  			<th>{{player.year_level}}</th>
+	  			<th>{{player.position}}</th>
+				<th><a class="btn btn-danger btn-sm mt-1 bm-1" href="{% url 'player-delete' player.id %}"> Delete </a></th>
+			</tr>   
+		{% endfor %}
+	</table>
+	<br>
+	<a class="btn btn-secondary btn-sm mt-1 bm-1" href="{% url 'team-update' object.id %}"> Update Team Profile </a>
+	<a class="btn btn-danger btn-sm mt-1 bm-1" href="{% url 'team-delete' object.id %}"> Delete Team Profile</a>
 {% endblock content %}
