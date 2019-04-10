@@ -20,18 +20,18 @@ class SchedPostListView(ListView):
     model = Schedule
     template_name = 'schedule/sched.html'
     context_object_name = 'sched'
-    ordering = ['-id']
+    ordering = ['sport']
 
 class SchedPostDetailView(DetailView):
     model = Schedule
 
 class SchedPostCreateView(LoginRequiredMixin, CreateView):
     model = Schedule    
-    fields = ['teamOne', 'teamTwo', 'venue', 'date_and_time', 'image1', 'image2']
+    fields = ['teamOne', 'teamTwo', 'sport', 'venue', 'date_and_time', 'image1', 'image2']
 
 class SchedPostUpdateView(LoginRequiredMixin, UpdateView):
     model = Schedule	
-    fields = ['teamOne', 'teamTwo', 'venue', 'date_and_time', 'image1', 'image2']
+    fields = ['teamOne', 'teamTwo', 'sport', 'venue', 'date_and_time', 'image1', 'image2']
 
 class SchedPostDeleteView(LoginRequiredMixin, DeleteView):
     model = Schedule

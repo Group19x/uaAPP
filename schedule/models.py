@@ -22,6 +22,7 @@ class Schedule(models.Model):
     id = models.AutoField(primary_key=True)
     teamOne = models.CharField(max_length = 100)
     teamTwo = models.CharField(max_length = 100)
+    sport = models.CharField(max_length = 100, blank = True)
     venue = models.CharField(max_length = 100)
     date_and_time = models.DateTimeField(default=timezone.now, blank = True, validators=[validate_date])
     image1 = models.ImageField(upload_to='Images/%Y/%m/%d/', blank = True)

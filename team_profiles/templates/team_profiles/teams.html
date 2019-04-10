@@ -3,6 +3,8 @@
 {% block content %}
 	<a class = "btn btn-outline-secondary" href="{% url 'team-create' %}"> Create Team </a>
 	<a class = "btn btn-outline-secondary" href="{% url 'player-create' %}"> Create Player </a>
+	<br>
+	<br>
 	{% for item in teams %}
 		<article class="media content-section">
 			<div class="media-body">	
