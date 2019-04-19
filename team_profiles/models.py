@@ -22,3 +22,6 @@ class Player_Profile(models.Model):
 
 	def __str__(self):
 		return self.player_name
+
+	class Meta:
+		ordering = ['sports']
