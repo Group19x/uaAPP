@@ -11,14 +11,17 @@ Table Attributes: Sport, Team, Win, Lose, Rank
 
 class Leaderboard(models.Model):
     id = models.AutoField(primary_key=True)
-    sport = models.CharField(max_length = 100)
-    team = models.CharField(max_length = 100)
-    win = models.IntegerField()
-    lose = models.IntegerField()
-    rank = models.IntegerField()
+    sport = models.CharField(max_length = 100, verbose_name='Sport')
+    team = models.CharField(max_length = 100, verbose_name='Team')
+    win = models.IntegerField(verbose_name='Win')
+    lose = models.IntegerField(verbose_name='Loss')
+    rank = models.IntegerField(verbose_name='Rank')
 
     def __str__(self):
         return self.sport
 
     def get_absolute_url(self):
     	return reverse('leaderboard')
+
+    class Meta:
+        ordering = ['sport']

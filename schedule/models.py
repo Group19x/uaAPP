@@ -20,13 +20,13 @@ def validate_date(date):
 
 class Schedule(models.Model):
     id = models.AutoField(primary_key=True)
-    teamOne = models.CharField(max_length = 100)
-    teamTwo = models.CharField(max_length = 100)
-    sport = models.CharField(max_length = 100, blank = True)
-    venue = models.CharField(max_length = 100)
-    date_and_time = models.DateTimeField(default=timezone.now, blank = True, validators=[validate_date])
-    image1 = models.ImageField(upload_to='Images/%Y/%m/%d/', blank = True)
-    image2 = models.ImageField(upload_to='Images/%Y/%m/%d/', blank = True)
+    teamOne = models.CharField(max_length = 100, verbose_name='Team One')
+    teamTwo = models.CharField(max_length = 100, verbose_name='Team Two')
+    sport = models.CharField(max_length = 100, blank = True, verbose_name='Sport')
+    venue = models.CharField(max_length = 100, verbose_name='Venue')
+    date_and_time = models.DateTimeField(default=timezone.now, blank = True, validators=[validate_date], verbose_name='Date and Time')
+    image1 = models.ImageField(upload_to='Images/%Y/%m/%d/', blank = True, verbose_name='Team One Image')
+    image2 = models.ImageField(upload_to='Images/%Y/%m/%d/', blank = True, verbose_name='Team Two Image')
 
     def __str__(self):
         return self.teamOne + "-" + self.teamTwo
