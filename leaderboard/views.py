@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Leaderboard
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
@@ -14,11 +15,11 @@ class LeaderboardListView(ListView):
 
     template_name = 'leaderboard/leaderboard_list.html'
 
-class LeaderboardCreateView(CreateView):
+class LeaderboardCreateView(LoginRequiredMixin, CreateView):
     model = Leaderboard    
     fields = ['sport', 'team', 'win', 'lose', 'rank' ]
 
-class LeaderboardUpdateView(UpdateView):
+class LeaderboardUpdateView(LoginRequiredMixin, UpdateView):
     model = Leaderboard
     fields = ['sport', 'team', 'win', 'lose', 'rank' ]
 
@@ -31,7 +32,7 @@ class LeaderboardUpdateView(UpdateView):
         print(form.errors)
         return super().form_valid(form)
 
-class LeaderboardDeleteView(DeleteView):
+class LeaderboardDeleteView(LoginRequiredMixin, DeleteView):
     model = Leaderboard
     success_url = '/leaderboard'
     

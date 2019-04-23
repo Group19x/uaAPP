@@ -14,23 +14,23 @@ class TeamDetailView(DetailView):
 	model = Team_Profile
 	context_object_name = 'teams'
 
-class TeamCreateView(CreateView):
+class TeamCreateView(LoginRequiredMixin, CreateView):
 	model = Team_Profile
 	fields = ['teamName', 'email', 'rec_email']
 
-class TeamUpdateView(UpdateView):
+class TeamUpdateView(LoginRequiredMixin, UpdateView):
 	model = Team_Profile
 	fields = ['teamName', 'email', 'rec_email']
 
-class TeamDeleteView(DeleteView):
+class TeamDeleteView(LoginRequiredMixin, DeleteView):
 	model = Team_Profile
 	success_url = '/team_profiles'
 
-class PlayerCreateView(CreateView):
+class PlayerCreateView(LoginRequiredMixin, CreateView):
 	model = Player_Profile
 	fields = ['teamID', 'player_name', 'sports', 'year_level', 'position']
 	success_url = '/team_profiles'
 
-class PlayerDeleteView(DeleteView):
+class PlayerDeleteView(LoginRequiredMixin, DeleteView):
 	model = Player_Profile
 	success_url = '/team_profiles'
