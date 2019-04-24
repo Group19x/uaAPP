@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Article
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
@@ -34,7 +35,7 @@ class ArticleDetailView(DetailView):
     model = Article
     context_object_name = 'article'
 
-class ArticleCreateView(CreateView):
+class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Article
     fields = ['title', 'author', 'body', 'image' ]
 
@@ -47,7 +48,7 @@ class ArticleCreateView(CreateView):
         print(form.errors)
         return super().form_valid(form)
 
-class ArticleUpdateView(UpdateView):
+class ArticleUpdateView(LoginRequiredMixin, UpdateView):
     model = Article
     fields = ['title', 'author', 'body', 'image' ]
 
@@ -60,7 +61,7 @@ class ArticleUpdateView(UpdateView):
         print(form.errors)
         return super().form_valid(form)
 
-class ArticleDeleteView(DeleteView):
+class ArticleDeleteView(LoginRequiredMixin, DeleteView):
     model = Article
     success_url = '/news'
     
