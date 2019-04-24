@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'schedule.apps.ScheduleConfig',
     'news.apps.NewsConfig',
-    'news_create.apps.NewsCreateConfig'
+    'news_create.apps.NewsCreateConfig',
+    'leaderboard.apps.LeaderboardConfig',
+    'team_profiles.apps.TeamProfilesConfig',
 ]
 
 MIDDLEWARE = [
@@ -71,6 +73,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'uaAPP.context_processors.current_user',
             ],
         },
     },

@@ -1,0 +1,30 @@
+{% extends "home/base.html" %}
+
+{% block content %}	
+	<style>
+		th {
+			  border: 1px solid black;
+		}
+	</style>
+	<h1>{{object.teamName}}</h1>
+	<table style = "width: 100%">
+		<tr>
+			<th> Player </th>
+			<th> Sports </th>
+			<th> Year Level </th>
+			<th> Position </th>
+		</tr>
+		{% for player in teams.player_profile_set.all %}
+	  		<tr>
+	  			<td>{{player.player_name}}</td>
+	  			<td>{{player.sports}}</td>
+	  			<td>{{player.year_level}}</td>
+	  			<td>{{player.position}}</td>
+				<td><a class="btn btn-danger btn-sm mt-1 bm-1" href="{% url 'player-delete' player.id %}"> Delete </a></td>
+			</tr>   
+		{% endfor %}
+	</table>
+	<br>
+	<a class="btn btn-secondary btn-sm mt-1 bm-1" href="{% url 'team-update' object.id %}"> Update Team Profile </a>
+	<a class="btn btn-danger btn-sm mt-1 bm-1" href="{% url 'team-delete' object.id %}"> Delete Team Profile</a>
+{% endblock content %}

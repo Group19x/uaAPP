@@ -12,6 +12,10 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'home/main.css' %}">
 
+    <!-- Semantic UI -->
+<!--     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"> -->
+
     <title> {% block title %} {% endblock %} </title>
 </head>
 <body>
@@ -23,20 +27,25 @@
           <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
-            <div class="navbar-nav mr-auto">
+            <div class="navbar-nav">
               <a class="nav-item nav-link" href="{% url 'home-main' %}">Home</a>
             </div>
-            <div class="navbar-nav mr-auto">
+            <div class="navbar-nav">
               <a class="nav-item nav-link" href="{% url 'sched' %}">Schedule</a>
             </div>
-            <div class="navbar-nav mr-auto">
+            <div class="navbar-nav">
               <a class="nav-item nav-link" href="{% url 'news' %}">News</a>
+            </div>
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="{% url 'leaderboard' %}">Leaderboard</a>
+            </div>
+            <div class="navbar-nav mr-auto">
+              <a class="nav-item nav-link" href="{% url 'teams' %}">Team Profiles</a>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if user.is_authenticated %}
                 <a class="nav-item nav-link" href="#"> Welcome, {{ username }}! </a>
-                <a class="nav-item nav-link" href="#"> You are a {{ type }}! </a>
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
               {% else %}
                 <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
@@ -62,6 +71,93 @@
         </div>
       </div>
     </main>
+
+
+<!-- Footer -->
+<footer class="footer">
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+
+          <!-- Content -->
+          <h5 class="text-uppercase">Footer Content</h5>
+          <p>Here you can use rows and columns here to organize your footer content.</p>
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Link 1</a>
+              </li>
+              <li>
+                <a href="#!">Link 2</a>
+              </li>
+              <li>
+                <a href="#!">Link 3</a>
+              </li>
+              <li>
+                <a href="#!">Link 4</a>
+              </li>
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Link 1</a>
+              </li>
+              <li>
+                <a href="#!">Link 2</a>
+              </li>
+              <li>
+                <a href="#!">Link 3</a>
+              </li>
+              <li>
+                <a href="#!">Link 4</a>
+              </li>
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+
+  </footer>
+  <!-- Footer -->
+
+  <div class="copyright py-4 text-center text-black">
+    <div class="container">
+      <small>Copyright 2019 &copy; Jeanne James John</small>
+    </div>
+  </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

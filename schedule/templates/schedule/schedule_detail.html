@@ -2,8 +2,9 @@
 
 {% block content %}
 	<h1>{{object.teamOne}} vs. {{object.teamTwo}}</h1>
+	<p>Sport: {{object.sport}} </p>
 	<p>Venue: {{object.venue}} </p>
-	<p>Date and Time: {{object.date}} {{object.time}}</p>
+	<p>Date and Time: {{object.date_and_time}}</p>
 	<a class="btn btn-secondary btn-sm mt-1 bm-1" href="{% url 'post-update' object.id %}"> Update </a>
 	<a class="btn btn-danger btn-sm mt-1 bm-1" href="{% url 'post-delete' object.id %}"> Delete </a>	
 {% endblock content %}

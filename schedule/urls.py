@@ -1,6 +1,7 @@
 from django.urls import include, path
 from .views import (
-	SchedPostListView, 
+	SchedPostListView,
+	SchedPostCreateView, 
 	SchedPostDetailView, 
 	SchedPostUpdateView, 
 	SchedPostDeleteView
@@ -17,7 +18,7 @@ Paths 2,4,5 requires model id which is int:pk
 '''
 urlpatterns = [
     path('', SchedPostListView.as_view(), name='sched'),
-    path('post/new/', views.SchedPostCreateView, name='post-create'),
+    path('post/new/', SchedPostCreateView.as_view(), name='post-create'),
     path('post/<int:pk>/', SchedPostDetailView.as_view(), name='post-detail'),
     path('post/<int:pk>/update', SchedPostUpdateView.as_view(), name='post-update'),
     path('post/<int:pk>/delete', SchedPostDeleteView.as_view(), name='post-delete'),
