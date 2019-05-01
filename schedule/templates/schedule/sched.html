@@ -1,0 +1,19 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+    <h1> S C H E D U L E </h1>
+    <hr>
+	<a class = "btn btn-outline-secondary" href="{% url 'post-create' %}"> Create Schedule </a>
+	<hr>
+	<br>
+	{% for item in sched %}
+		<article class="media content-section">
+			<div class="media-body">	
+				<h1><a class="article-title" href="{% url 'post-detail' item.id %}">{{item.teamOne}} vs. {{item.teamTwo}}</a></h1>
+				<p>Sport: {{item.sport}} </p>
+				<p>Venue: {{item.venue}} </p>
+				<p>Date and Time: {{item.date_and_time}}</p>
+			</div>
+		</article>
+	{% endfor %}
+{% endblock content %}

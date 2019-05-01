@@ -1,0 +1,34 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+    
+    
+    <h1> N E W S </h1>
+    <hr>
+    <a class = "btn btn-outline-secondary" href="{% url 'article-create' %}"> Create Article </a>
+    <hr>
+    <br>
+	{% for article in news %}		
+        
+        <article class="media content-section">
+          <div class="media-body">
+            <br>
+            <h2>
+              <div class="d-flex justify-content-start">
+                    <a class="article-title" href="{% url 'article-detail' article.id %}">{{ article.title }}</a>
+                </div>  
+            </h2>
+            <div class="d-flex justify-content-end">
+                <a class="mr-2">by {{ article.author }}</a>
+                <small class="text-muted">{{ article.date_and_time }}</small>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-center">
+                    <img class="img-thumbnail" src="{{ MEDIA_URL }}{{article.image.url}}">
+            </div>
+        
+
+          </div>
+        </article>
+	{% endfor %}
+{% endblock content %}

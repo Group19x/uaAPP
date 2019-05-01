@@ -1,0 +1,26 @@
+_{% extends "home/base.html" %}
+
+{% block content %}
+    <article class="media content-section">
+        <div class="media-body">
+        <h2>
+            <div class="d-flex justify-content-start">
+                <a class="article-title">{{ article.title }}</a>
+            </div>  
+        </h2>
+        <div class="d-flex justify-content-end">
+            <a class="mr-2">by {{ article.author }}</a>
+            <small class="text-muted">{{ article.date_and_time }}</small>
+        </div>
+        <hr>
+            <a class="btn-secondary btn-sm mt-1 mb-1 mr-2" href="{% url 'article-update' object.id %}"> Update </a>
+            <a class="btn-danger btn-sm mt-1 mb-1" href="{% url 'article-delete' object.id %}"> Delete </a>
+        <hr>
+        <img class="img-thumbnail" src="{{ MEDIA_URL }}{{article.image.url}}">
+        <hr>
+        <div class="d-flex justify-content-start">
+            <p>
+                {{ article.body}}
+            </p>
+    </article>
+{% endblock content %}
