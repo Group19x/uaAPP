@@ -13,8 +13,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = 'uaAPP'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -25,7 +25,7 @@ SECRET_KEY = 'kuk!aklo*tp&4tdm%c@7zf$xdwd0&a-!3b940i&vc16kz8b&(f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['group19x.pythonanywhere.com']
 
 
 # Application definition
@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'schedule.apps.ScheduleConfig',
     'news.apps.NewsConfig',
-    'news_create.apps.NewsCreateConfig'
+    'news_create.apps.NewsCreateConfig',
+    'leaderboard.apps.LeaderboardConfig',
+    'team_profiles.apps.TeamProfilesConfig',
 ]
 
 MIDDLEWARE = [
@@ -86,6 +88,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'NAME' : '/db.sqlite3'
     }
 }
 
@@ -134,3 +137,4 @@ LOGIN_REDIRECT_URL = 'home-main'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'home/static')

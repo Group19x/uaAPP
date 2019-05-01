@@ -14,7 +14,7 @@
 
     <!-- <img src="/media/logo.png" width="50" height="10" class="d-inline-block align-top" alt=""> -->
 
-    <title> {% block title %} {% endblock %} </title> 
+    <title> {% block title %} {% endblock %} </title>
 </head>
 
 <body>
@@ -34,7 +34,7 @@
             </div>
             <div class="navbar-nav">
               <a class="nav-item nav-link" href="{% url 'news' %}">News</a>
-            </div>      
+            </div>
             <div class="navbar-nav">
               <a class="nav-item nav-link" href="{% url 'leaderboard' %}">Leaderboard</a>
             </div>
@@ -44,7 +44,7 @@
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if user.is_authenticated %}
-                <a class="nav-item nav-link" href="#"> Welcome, {{ username }}! </a>
+                <a class="nav-item nav-link" href="#"> Welcome, {{ user.username }}! </a>
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
               {% else %}
                 <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
@@ -60,7 +60,7 @@
         <div class="col-md-8">
           {% if messages %}
               {% for message in messages %}
-                  <div class = "alert alert-{{ message.tags }}"> 
+                  <div class = "alert alert-{{ message.tags }}">
                       {{ message }}
                   </div>
               {% endfor %}
@@ -71,7 +71,7 @@
           {% block content %}
           {% endblock %}
         </div>
-          
+
       </div>
     </main>
 
