@@ -3,6 +3,7 @@ from django.urls import reverse
 # Create your models here.
 class Team_Profile(models.Model):
 	teamName = models.CharField(max_length=100, verbose_name='Team Name')
+	image = models.ImageField(upload_to='Images/%Y/%m/%d/', verbose_name='Image', blank = True)
 	email = models.CharField(max_length=100, verbose_name='Email Adress')
 	rec_email = models.CharField(max_length=100, verbose_name='Recovery Email')
 	creation_date = models.DateTimeField(auto_now_add=True, verbose_name='Creation Date')

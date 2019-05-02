@@ -16,11 +16,11 @@ class TeamDetailView(DetailView):
 
 class TeamCreateView(LoginRequiredMixin, CreateView):
 	model = Team_Profile
-	fields = ['teamName', 'email', 'rec_email']
+	fields = ['teamName', 'image', 'email', 'rec_email']
 
 class TeamUpdateView(LoginRequiredMixin, UpdateView):
 	model = Team_Profile
-	fields = ['teamName', 'email', 'rec_email']
+	fields = ['teamName', 'image', 'email', 'rec_email']
 
 class TeamDeleteView(LoginRequiredMixin, DeleteView):
 	model = Team_Profile
