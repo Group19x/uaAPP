@@ -15,7 +15,7 @@ class Team_Profile(models.Model):
 		return reverse('team-detail', kwargs={'pk': self.pk}) 
 
 class Player_Profile(models.Model):
-	teamID = models.ForeignKey(Team_Profile, on_delete=models.CASCADE, verbose_name='Team Name')
+	teamID = models.ForeignKey(Team_Profile, null = True, on_delete=models.CASCADE, verbose_name='Team Name')
 	player_name = models.CharField(max_length=100, verbose_name='Player Name')
 	sports = models.CharField(max_length=100, verbose_name='Sport')
 	year_level = models.IntegerField(verbose_name='Year Level')

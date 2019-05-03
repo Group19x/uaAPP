@@ -1,4 +1,5 @@
 {% extends 'home/base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
     <div class = "container">
@@ -8,9 +9,10 @@
                 <legend class = "border-bottom mb-4"> Delete Team </legend>
                 <h2> Are you sure you want to delete this Team, "{{object.teamName}}"? </h2>
             </fieldsets>
+            {{ form|crispy }}
             <div class = "form-group">
                 <button class = "btn btn-outline-danger" type="submit"> Yes, Delete </button>
-                <a class = "btn btn-outline-secondary" href="{% url 'team-detail' object.teamID %}"> Cancel </a>
+                <a class = "btn btn-outline-secondary" href="{% url 'team-detail' object.pk %}"> Cancel </a>
             </div>
         </form>
     </div>

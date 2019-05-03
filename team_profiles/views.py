@@ -34,3 +34,4 @@ class PlayerCreateView(LoginRequiredMixin, CreateView):
 class PlayerDeleteView(LoginRequiredMixin, DeleteView):
 	model = Player_Profile
 	success_url = '/team_profiles'
+	
